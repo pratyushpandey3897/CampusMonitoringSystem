@@ -1,0 +1,27 @@
+Void setup() {}
+void loop(){
+CheckP();
+Firebase.setFloat("waterlevel", y );
+void Checklevel()
+{
+level_alert_val=Checkwaterlevel();
+
+voltage = (level_alert_val/1024)*(3.3) ;
+Serial.print(voltage);
+Serial.print("voltage" );
+Serial.print("\n");
+
+y=(8501.7237*voltage)+3910.0733;
+
+delay(500);
+}
+float Checkwaterlevel()
+{
+int b=0;
+int n;
+int count1=1;
+level_read=analogRead(A0);
+Serial.print("adc");
+Serial.print(level_read);
+Serial.print("\n");
+return level_read;}
