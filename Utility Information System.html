@@ -1,0 +1,508 @@
+<style type="text/css">
+    * {
+        box-sizing: border-box;
+    }
+
+    .ddr-page-wrapper {
+        position: relative;
+        padding: 0px;
+        margin: 0px;
+        font-family: sans-serif;
+        font-size: 16px;
+    }
+
+    .ddr-page-wrapper .ddr-page {
+        position: relative;
+    }
+
+    .ddr-page-wrapper .ddr-page .ddr-page-section-pre-content::after,
+    .ddr-page-wrapper .ddr-page .ddr-page-section-pre-content::before,
+    .ddr-page-wrapper .ddr-page>div::after,
+    .ddr-page-wrapper .ddr-page>div::before {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .ddr-page-row,
+    .ddr-page-section-wrapper .ddr-page-section {
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .ddr-page-row {
+        display: flex;
+        width: 100%;
+    }
+
+    .ddr-page-row__wrap {
+        flex-wrap: wrap;
+    }
+
+    .ddr-page-row__wrap .ddr-page-column__wrap {
+        width: 100% !important;
+    }
+
+    .ddr-page-row__wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+
+    .ddr-page-row__wrap-reverse .ddr-page-column__wrap-reverse {
+        width: 100% !important;
+    }
+
+    .ddr-page-column {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        position: relative;
+        align-content: flex-start;
+    }
+
+    .ddr-page-widget {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ddr-widget {
+        background-color: transparent;
+        background-image: none;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        height: auto;
+        width: auto;
+        max-height: none;
+        max-width: none;
+        min-height: 0px;
+        min-width: 0px;
+        padding: 0px;
+        margin: 0px;
+        overflow: hidden;
+    }
+
+    .ddr-widget__rich-text {
+        position: relative;
+        cursor: auto;
+        overflow-wrap: break-word;
+        overflow: hidden;
+    }
+
+    .ddr-widget__headline {
+        position: relative;
+        overflow: hidden;
+        word-break: break-word;
+    }
+
+    .ddr-widget__spacer {
+        position: relative;
+        overflow: hidden;
+    }
+
+    @media (min-width: 1025px) {
+        .ddr-page-row__wrap--max {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--max .ddr-page-column__wrap--max {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--max {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--max .ddr-page-column__wrap-reverse--max {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--max,
+        .ddr-page-widget__hide--max {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .ddr-page-row__wrap--1024 {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--1024 .ddr-page-column__wrap--1024 {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--1024 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--1024 .ddr-page-column__wrap-reverse--1024 {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--1024,
+        .ddr-page-widget__hide--1024 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) and (min-width: 481px) {
+        .ddr-page-row__wrap--768 {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--768 .ddr-page-column__wrap--768 {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--768 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--768 .ddr-page-column__wrap-reverse--768 {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--768,
+        .ddr-page-widget__hide--768 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 480px) and (min-width: 321px) {
+        .ddr-page-row__wrap--480 {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--480 .ddr-page-column__wrap--480 {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--480 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--480 .ddr-page-column__wrap-reverse--480 {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--480,
+        .ddr-page-widget__hide--480 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 320px) and (min-width: 0px) {
+        .ddr-page-row__wrap--320 {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--320 .ddr-page-column__wrap--320 {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--320 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--320 .ddr-page-column__wrap-reverse--320 {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--320,
+        .ddr-page-widget__hide--320 {
+            display: none;
+        }
+    }
+
+    #ddr-rich-text-2101 * {
+
+        line-height: 1.7;
+    }
+
+    #ddr-rich-text-2103 * {
+
+        line-height: 1.7;
+    }
+
+    #ddr-rich-text-2111 * {
+
+        line-height: 1.7;
+    }
+
+    #ddr-rich-text-2113 * {
+
+        line-height: 1.7;
+    }
+
+    #ddr-rich-text-2121 * {
+
+        line-height: 1.7;
+    }
+
+    #ddr-rich-text-2123 * {
+
+        line-height: 1.7;
+    }
+</style>
+<div class="ddr-page-wrapper" data-ddr-page-id="2ca0dfe2-46f8-11e9-a921-0242ac140005">
+    <div class="ddr-page">
+        <div class="ddr-page-row ddr-page-row-0 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768">
+            <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 100%;">
+                <div id="ddr-44059ea7a3" class="ddr-page-widget ddr-page-widget__headline ddr-page-widget-0 ">
+                    <div class="ddr-widget">
+                        <h1 class="ddr-widget__headline" style="margin: 30px; text-align: center; color: rgb(0, 137, 255);">UTILITY INFORMATION SYSTEM</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ddr-e5614d5532" class="ddr-page-section-wrapper ddr-page-section-wrapper-1" style="background-color: rgb(248, 248, 248);">
+            <div class="ddr-page-section-pre-content ddr-page-section-pre-content-1">
+                <div class="ddr-page-section ddr-page-section-1">
+                    <div class="ddr-page-row ddr-page-row-0 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768">
+                        <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 33.3333%;">
+                            <div id="ddr-e98c025bad" class="ddr-page-widget ddr-page-widget__spacer ddr-page-widget-0 ">
+                                <div class="ddr-widget" style="background-image: url(&quot;https://cdn.dragdropr.com/9ffccbfd-d74a-4450-a06f-ad2604a7a04b/&quot;); background-position: center center; background-size: contain; background-repeat: no-repeat;">
+                                    <div class="ddr-widget__spacer" style="height: 387px; margin-top: 0px; margin-bottom: 0px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ddr-page-column ddr-page-column-1 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 33.3333%;">
+                            <div id="ddr-35f290ad22" class="ddr-page-widget ddr-page-widget__headline ddr-page-widget-0 ">
+                                <div class="ddr-widget">
+                                    <h2 class="ddr-widget__headline" style="margin: 1px 30px 0px; text-align: center; padding-top: 28px;">FIRE FIGHTING TANK&nbsp;</h2>
+                                </div>
+                            </div>
+                            <div id="ddr-d668ac2673" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-1 ">
+                                <div class="ddr-widget" style="background-color: rgba(241, 9, 13, 0.53);">
+                                    <div id="ddr-rich-text-1011" class="ddr-widget__rich-text" style="margin: 0px 30px 1px; border-style: solid; border-width: 0px;">
+                                        <p style="text-align: center;"><span style="font-size: 33px; color: #000000;"id="ff"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ddr-e57d735843" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-2 ">
+                                <div class="ddr-widget">
+                                    <div id="ddr-rich-text-1012" class="ddr-widget__rich-text" style="margin: 0px 30px 1px;">
+                                        <p style="text-align: center;">Litres</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ddr-64971a8273" class="ddr-page-widget ddr-page-widget__headline ddr-page-widget-3 ">
+                                <div class="ddr-widget">
+                                    <h2 class="ddr-widget__headline" style="margin: 43px 30px 0px; text-align: center;">FIRE HOSE PRESSURE</h2>
+                                </div>
+                            </div>
+                            <div id="ddr-9a5c0e5ea7" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-4 ">
+                                <div class="ddr-widget" style="background-color: rgba(241, 9, 13, 0.53);">
+                                    <div id="ddr-rich-text-1014" class="ddr-widget__rich-text" style="margin: 0px 30px 1px;">
+                                        <p style="text-align: center;"><span style="font-size: 33px;"id="pressure"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ddr-d90c13688a" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-5 ">
+                                <div class="ddr-widget">
+                                    <div id="ddr-rich-text-1015" class="ddr-widget__rich-text" style="margin: 0px 30px 1px;">
+                                        <p style="text-align: center;">Bar</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ddr-page-column ddr-page-column-2 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 33.3333%;">
+                            <div id="ddr-c1171820a5" class="ddr-page-widget ddr-page-widget__headline ddr-page-widget-0 ">
+                                <div class="ddr-widget">
+                                    <h2 class="ddr-widget__headline" style="margin: 29px 30px 0px; text-align: center;">WATER TANK LEVEL</h2>
+                                </div>
+                            </div>
+                            <div id="ddr-616a58b9ea" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-1 ">
+                                <div class="ddr-widget" style="background-color: rgba(9, 46, 250, 0.17);">
+                                    <div id="ddr-rich-text-1021" class="ddr-widget__rich-text" style="margin: 0px 30px 1px;">
+                                        <p style="text-align: center;"><span style="font-size: 33px;"id="tank"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ddr-f9484ebd00" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-2 ">
+                                <div class="ddr-widget">
+                                    <div id="ddr-rich-text-1022" class="ddr-widget__rich-text" style="margin: 0px 30px 1px;">
+                                        <p style="text-align: center;">Litres</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ddr-c0c4352f4e" class="ddr-page-widget ddr-page-widget__headline ddr-page-widget-3 ">
+                                <div class="ddr-widget">
+                                    <h2 class="ddr-widget__headline" style="margin: 42px 30px 0px; text-align: center;">TEMPERATURE</h2>
+                                </div>
+                            </div>
+                            <div id="ddr-53b39561a1" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-4 ">
+                                <div class="ddr-widget" style="background-color: rgba(183, 255, 14, 0.36);">
+                                    <div id="ddr-rich-text-1024" class="ddr-widget__rich-text" style="margin: 2px 30px 1px;">
+                                        <p style="text-align: center;"><span style="font-size: 33px;"id="tempsen"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ddr-1658cb6bc8" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-5 ">
+                                <div class="ddr-widget">
+                                    <div id="ddr-rich-text-1025" class="ddr-widget__rich-text" style="margin: 1px 30px;">
+                                        <p style="text-align: center;">Degree Celsius</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ddr-021fc7661e" class="ddr-page-section-wrapper ddr-page-section-wrapper-2">
+            <div class="ddr-page-section-pre-content ddr-page-section-pre-content-2" style="max-width: 1200px; margin: auto;">
+                <div class="ddr-page-section ddr-page-section-2">
+                    <div class="ddr-page-row ddr-page-row-0 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768">
+                        <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 100%;">
+                            <div id="ddr-cda1ce5a0d" class="ddr-page-widget ddr-page-widget__headline ddr-page-widget-0 ">
+                                <div class="ddr-widget" style="background-color: rgba(0, 137, 255, 0.34);">
+                                    <h1 class="ddr-widget__headline" style="margin: 1px 30px 4px; text-align: center; font-size: 39px; box-shadow: 0px 0px 0px 0px;">Parking Status</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ddr-page-row ddr-page-row-1 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768">
+                        <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 33.3333%;">
+                            <div id="ddr-4357c91610" class="ddr-page-widget ddr-page-widget__headline ddr-page-widget-0 ">
+                                <div class="ddr-widget" style="background-color: rgb(250, 250, 250);">
+                                    <h1 class="ddr-widget__headline" style="margin: 1px 30px; text-align: center; font-size: 45px;"id="p1"></h1>
+                                </div>
+                            </div>
+                            <div id="ddr-621c8e6534" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-1 ">
+                                <div class="ddr-widget" style="background-color: rgb(250, 250, 250);">
+                                    <div id="ddr-rich-text-2101" class="ddr-widget__rich-text" style="margin: 1px 30px;">
+                                        <p style="text-align: center;"><span style="font-size: 30px;">P1</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ddr-d334d4f51e" class="ddr-page-widget ddr-page-widget__headline ddr-page-widget-2 ">
+                                <div class="ddr-widget" style="background-color: rgb(250, 250, 250);">
+                                    <h1 class="ddr-widget__headline" style="margin: 1px 30px; text-align: center; font-size: 45px;">----</h1>
+                                </div>
+                            </div>
+                            <div id="ddr-d2cc91d345" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-3 ">
+                                <div class="ddr-widget" style="background-color: rgb(250, 250, 250);">
+                                    <div id="ddr-rich-text-2103" class="ddr-widget__rich-text" style="margin: 1px 30px;">
+                                        <p style="text-align: center;"><span style="font-size: 30px;">P4</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ddr-page-column ddr-page-column-1 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 33.3333%;">
+                            <div id="ddr-ee441eba45" class="ddr-page-widget ddr-page-widget__headline ddr-page-widget-0 ">
+                                <div class="ddr-widget" style="background-color: rgb(250, 250, 250);">
+                                    <h1 class="ddr-widget__headline" style="margin: 1px 30px; text-align: center; font-size: 45px;"id="p2"></h1>
+                                </div>
+                            </div>
+                            <div id="ddr-efabf8258b" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-1 ">
+                                <div class="ddr-widget" style="background-color: rgb(250, 250, 250);">
+                                    <div id="ddr-rich-text-2111" class="ddr-widget__rich-text" style="margin: 1px 30px;">
+                                        <p style="text-align: center;"><span style="font-size: 30px;">P2</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ddr-ba939b66e6" class="ddr-page-widget ddr-page-widget__headline ddr-page-widget-2 ">
+                                <div class="ddr-widget" style="background-color: rgb(250, 250, 250);">
+                                    <h1 class="ddr-widget__headline" style="margin: 1px 30px; text-align: center; font-size: 45px;">----</h1>
+                                </div>
+                            </div>
+                            <div id="ddr-f3d97aaadf" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-3 ">
+                                <div class="ddr-widget" style="background-color: rgb(250, 250, 250);">
+                                    <div id="ddr-rich-text-2113" class="ddr-widget__rich-text" style="margin: 1px 30px;">
+                                        <p style="text-align: center;"><span style="font-size: 30px;">P5</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ddr-page-column ddr-page-column-2 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 33.3333%;">
+                            <div id="ddr-a0a4c06249" class="ddr-page-widget ddr-page-widget__headline ddr-page-widget-0 ">
+                                <div class="ddr-widget" style="background-color: rgb(250, 250, 250);">
+                                    <h1 class="ddr-widget__headline" style="margin: 1px 30px; text-align: center; font-size: 45px;"id="p3"></h1>
+                                </div>
+                            </div>
+                            <div id="ddr-597a963890" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-1 ">
+                                <div class="ddr-widget" style="background-color: rgb(250, 250, 250);">
+                                    <div id="ddr-rich-text-2121" class="ddr-widget__rich-text" style="margin: 1px 30px; padding-top: 0px; padding-bottom: 0px;">
+                                        <p style="text-align: center;"><span style="font-size: 30px;">P3</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ddr-024ad5ac51" class="ddr-page-widget ddr-page-widget__headline ddr-page-widget-2 ">
+                                <div class="ddr-widget" style="background-color: rgb(250, 250, 250);">
+                                    <h1 class="ddr-widget__headline" style="margin: 1px 30px; text-align: center; font-size: 45px;">----</h1>
+                                </div>
+                            </div>
+                            <div id="ddr-cc503d0882" class="ddr-page-widget ddr-page-widget__rich-text ddr-page-widget-3 ">
+                                <div class="ddr-widget" style="background-color: rgb(250, 250, 250);">
+                                    <div id="ddr-rich-text-2123" class="ddr-widget__rich-text" style="margin: 1px 30px;">
+                                        <p style="text-align: center;"><span style="font-size: 30px;">P6</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA6jRI1camlKLLwI0bYTYsOI3YYhmCFiqs",
+    authDomain: "utility-infromation-system.firebaseapp.com",
+    databaseURL: "https://utility-infromation-system.firebaseio.com",
+    projectId: "utility-infromation-system",
+    storageBucket: "utility-infromation-system.appspot.com",
+    messagingSenderId: "427059648694"
+  };
+  firebase.initializeApp(config);
+
+var p1=document.getElementById('p1');
+var dbRef=firebase.database().ref().child('distance');
+dbRef.on('value',snap=>p1.innerText = snap.val());
+
+var pressure=document.getElementById('pressure');
+var dbRef1=firebase.database().ref().child('voltage');
+dbRef1.on('value',snap=>pressure.innerText = snap.val());
+
+var tempsen=document.getElementById('tempsen');
+var dbRef2=firebase.database().ref().child('temp');
+dbRef2.on('value',snap=>tempsen.innerText = snap.val());
+
+var p2=document.getElementById('p2');
+var dbRef3=firebase.database().ref().child('distance1');
+dbRef3.on('value',snap=>p2.innerText = snap.val());
+
+var p3=document.getElementById('p3');
+var dbRef4=firebase.database().ref().child('distance2');
+dbRef4.on('value',snap=>p3.innerText = snap.val());
+
+var ff=document.getElementById('ff');
+var dbRef5=firebase.database().ref().child('fflevel');
+dbRef5.on('value',snap=>ff.innerText = snap.val());
+
+var tank=document.getElementById('tank');
+var dbRef6=firebase.database().ref().child('waterlevel');
+dbRef6.on('value',snap=>tank.innerText = snap.val());
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
