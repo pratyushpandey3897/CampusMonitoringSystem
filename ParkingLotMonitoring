@@ -1,0 +1,38 @@
+int
+const trigPin0 = 05;
+int
+const echoPin0 = 16;
+// Anything over 400 cm (23200 us pulse) is "out of range"
+const unsigned int MAX_DIST = 23200;
+void setup() {
+    pinMode(trigPin0, OUTPUT);
+    pinMode(echoPin0, INPUT);
+
+    Serial.begin(9600);
+
+    // connect to wifi.
+
+    int n = 0;
+
+    void loop() {
+        int duration, distance;
+        int duration1, distance1, duration2, distance2, duration3, distance3, duration4, distance4;
+
+        \\
+        for 1 sensors
+        digitalWrite(trigPin0, HIGH);
+        delay(1);
+        digitalWrite(trigPin0, LOW)
+        duration = pulseIn(echoPin0, HIGH);
+        distance = (duration / 2) / 29.1;
+
+        if (distance <= 150 && distance >= 0) {
+          Firebase.setString("distance", "Full");
+          Serial.print(distance);
+        } else {
+
+          30
+          Firebase.setString("distance", "Empty");
+          Serial.print(distance);
+        }
+        delay(50);
